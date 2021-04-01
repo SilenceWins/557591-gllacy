@@ -8,7 +8,7 @@
   </head>
   <body>
     <header class="main-header">
-      <img src="img/logo.img" alt="Магазин Глейси">
+      <a href="index.html"><img src="img/logo.img" alt="Магазин Глейси"></a>
       <nav class="main-navigation">
         <ul class="site-navigation">
           <li>
@@ -25,15 +25,15 @@
           <li><a href="#">О компании</a></li>
         </ul>
         <ul class="user-navigation">
-          <li>
+          <li class="user-search">
             <button class="search-btn" type="button">Поиск</button>
-            <form class="user-search">
+            <form>
               <input type="search" name="search" placeholder="Что ищем?" required>
             </form>
           </li>
-          <li>
+          <li class="user-login">
             <button class="login-btn" type="button">Вход</button>
-            <form class="user-login">
+            <form>
               <input type="email" name="login-email" placeholder="Электронная почта" required>
               <input type="password" name="login-pass" placeholder="Пароль" required>
               <button type="submit">Войти</button>
@@ -41,7 +41,25 @@
               <a href="#">Новая регистрация</a>
             </form>
           </li>
-          <li><a href="#" class="user-cart cart-active">2 товара</a></li>
+          <li class="user-cart">
+            <a href="#" class="cart-active">2 товара</a>
+            <form class="user-cart-details">
+              <table class="user-cart-price">
+                <caption style="caption-side:bottom; text-align: right;">Итого: 750 руб.</caption>
+                <tr>
+                  <td>Пломбир с апельсиновым джемом</td>
+                  <td>1,5 кг х <span class="cart-price-per-kilo">200 руб.</span></td>
+                  <td>300 руб.</td>
+                </tr>
+                <tr>
+                  <td>Клубничный пломбир с присыпкой из белого шоколада</td>
+                  <td>1,5 кг х <span class="cart-price-per-kilo">300 руб.</span</td>
+                  <td>450 руб.</td>
+                </tr>
+              </table>
+              <button type="submit">Оформить заказ</button>
+            </form>
+          </li>
         </ul>
       </nav>
       <p class="header-time">С 10 до 20, ежедневно</p>
