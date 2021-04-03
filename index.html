@@ -2,16 +2,18 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>HTML Academy: Глейси</title>
+    <title>Глейси</title>
   </head>
   <body>
     <header class="main-header">
-      <img src="img/logo.img" alt="Магазин Глейси">
-      <nav class="main-navigation">
-        <ul class="site-navigation">
+      <a>
+        <img src="img/logo.img" alt="Логотип Глейси">
+      </a>
+      <nav class="main-navigation" aria-label="Главная навигация">
+        <ul class="site-navigation" aria-label="Страничная навигация">
           <li>
             <a href="#">Каталог</a>
-            <ul class="sub-menu">
+            <ul class="sub-menu" aria-label="Подменю">
               <li class="sub-menu-header">Новинки</li>
               <li><a href="#">Сливочное</a></li>
               <li><a href="#">Щербеты</a></li>
@@ -22,24 +24,33 @@
           <li><a href="#">Доставка и оплата</a></li>
           <li><a href="#">О компании</a></li>
         </ul>
-        <ul class="user-navigation">
+        <ul class="user-navigation" aria-label="Пользовательская навигация">
           <li>
-            <button class="search-btn" type="button">Поиск</button>
-            <form class="user-search">
-              <input type="search" name="search" placeholder="Что ищем?" required>
+            <a class="search-btn" href="#">Поиск</a>
+            <form class="user-search" method="POST" action="https://echo.htmlacademy.ru">
+              <label class="visually-hidden" for="search">Поиск</label>
+              <input type="search" name="search" id="search" placeholder="Что ищем?" required>
             </form>
           </li>
           <li>
-            <button class="login-btn" type="button">Вход</button>
-            <form class="user-login">
-              <input type="email" name="login-email" placeholder="Электронная почта" required>
-              <input type="password" name="login-pass" placeholder="Пароль" required>
+            <a class="login-btn" href="#" aria-label="Учетная запись">Вход</a>
+            <form class="user-login" method="POST" action="https://echo.htmlacademy.ru">
+              <p>
+                <label class="visually-hidden" for="login-email">Электронная почта</label>
+                <input type="email" name="login-email" id="login-email" placeholder="Электронная почта" required>
+              </p>
+              <p>
+                <label class="visually-hidden" for="login-pass">Пароль</label>
+                <input type="password" name="login-pass" id="login-pass" placeholder="Пароль" required>
+              </p>
               <button type="submit">Войти</button>
               <a href="#">Забыли пароль?</a>
               <a href="#">Новая регистрация</a>
             </form>
           </li>
-          <li><a href="#" class="user-cart">Пусто</a></li>
+          <li>
+            <a class="user-cart" href="#" aria-label="Корзина товаров">Пусто</a>
+          </li>
         </ul>
       </nav>
       <p class="header-time">С 10 до 20, ежедневно</p>
@@ -48,11 +59,11 @@
 
     <main class="container">
       <h1 class="visually-hidden">Главная страница магазина Глейси</h1>
-
+      <!-- Делать ли слайдер с помощью радиокнопок или как-то по-другому? -->
       <section class="main-slider">
         <h2 class="visually-hidden">Слайдер мороженого</h2>
         <label class="slider-control">
-          <input class="visually-hidden" type="radio" name="slider">
+          <input class="visually-hidden" type="radio" name="slider" checked>
         </label>
         <label class="slider-control">
           <input class="visually-hidden" type="radio" name="slider">
@@ -74,7 +85,7 @@
             <p>Пломбир с помадкой и клубничный щербет</p>
           </li>
         </ul>
-        <a href="#" class="btn">Давайте оба!</a>
+        <a class="btn" href="#">Давайте оба!</a>
       </section>
 
       <section class="discounts">
@@ -102,7 +113,7 @@
               <figcaption>Сливочное с апельсиновым джемом и цитрусовой стружкой</figcaption>
             </figure>
             <span class="price">310 Р/кг</span>
-            <a href="#" class="btn">Быстрый просмотр</a>
+            <a class="btn" href="#">Быстрый просмотр</a>
           </li>
           <li class="product product-hit">
             <figure>
@@ -110,7 +121,7 @@
               <figcaption>Сливочно-кофейное с кусочками шоколада</figcaption>
             </figure>
             <span class="price">380 Р/кг</span>
-            <a href="#" class="btn">Быстрый просмотр</a>
+            <a class="btn" href="#">Быстрый просмотр</a>
           </li>
           <li class="product product-hit">
             <figure>
@@ -118,7 +129,7 @@
               <figcaption>Сливочно-клубничное с присыпкой из белого шоколада</figcaption>
             </figure>
             <span class="price">355 Р/кг</span>
-            <a href="#" class="btn">Быстрый просмотр</a>
+            <a class="btn" href="#">Быстрый просмотр</a>
           </li>
           <li class="product product-hit">
             <figure>
@@ -126,7 +137,7 @@
               <figcaption>Сливочное крем-брюле с карамельной подливкой</figcaption>
             </figure>
             <span class="price">415 Р/кг</span>
-            <a href="#" class="btn">Быстрый просмотр</a>
+            <a class="btn" href="#">Быстрый просмотр</a>
           </li>
         </ul>
       </section>
@@ -143,22 +154,22 @@
       </section>
 
       <article class="blog-article">
-        <h2 class="visually-hidden">Статья для нашего блога</h2>
-        <p>Новое в нашем блоге</p>
+        <h2>Новое в нашем блоге</h2>
         <a href="#">10 способов сервировки фруктовых щербетов к столу</a>
       </article>
 
       <section class="mailing">
         <h2 class="visually-hidden">Рассылка</h2>
         <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
-        <form class="mailing-sign-up">
-          <input type="email" name="mailing-email" placeholder="Электронная почта" required>
+        <form class="mailing-sign-up" method="POST" action="https://echo.htmlacademy.ru">
+          <label class="visually-hidden" for="mailing-email">Электронная почта</label>
+          <input type="email" name="mailing-email" id="mailing-email" placeholder="Электронная почта" required>
           <button class="btn" type="submit">Отправить</button>
         </form>
       </section>
 
       <section class="main-map">
-        <h2 class="visually-hidden">Карта как до нас добраться</h2>
+        <h2 class="visually-hidden">Адрес</h2>
         <div class="map-js"></div>
         <div class="feedback">
           <p>Адрес главного офиса и офлайн-магазина:</p>
@@ -166,19 +177,19 @@
           <p>Для заказов по телефону:</p>
           <p class="feedback-phone">8 812 450-25-25</p>
           <p>(с 10 до 20 ежедневно)</p>
-          <button class="btn" type="button">Форма обратной связи</button>
+          <a class="btn" href="#">Форма обратной связи</a>
         </div>
       </section>
     </main>
 
     <footer class="footer">
-      <ul class="footer-social">
-        <li><a href="#">Твиттер</a></li>
-        <li><a href="#">Инстаграм</a></li>
-        <li><a href="#">Фейсбук</a></li>
-        <li><a href="#">ВКонтакте</a></li>
+      <ul class="footer-social" aria-label="Ссылки на соцсети">
+        <li><a href="#" aria-label="Твиттер">Твиттер</a></li>
+        <li><a href="#" aria-label="Инстаграм">Инстаграм</a></li>
+        <li><a href="#" aria-label="Фейсбук">Фейсбук</a></li>
+        <li><a href="#" aria-label="ВКонтакте">ВКонтакте</a></li>
       </ul>
-      <ul class="footer-references">
+      <ul class="footer-references" aria-label="Прочие документы">
         <li><a href="#">Для поставщиков</a></li>
         <li><a href="#">Наши документы</a></li>
         <li><a href="#">О производстве</a></li>
@@ -195,13 +206,19 @@
     <section class="modal modal-feedback">
       <h2 class="visually-hidden">Форма обратной связи</h2>
       <p>Мы обязательно вам ответим!</p>
-      <form action="" class="feedback-form">
-        <input type="text" name="feedback-user-name" placeholder="Как вас зовут?" required>
-        <input type="email" name="feedback-user-email" placeholder="Ваша почта для ответа?" required>
+      <form class="feedback-form" method="POST" action="https://echo.htmlacademy.ru">
+        <p>
+          <label class="visually-hidden" for="feedback-user-name">Ваше имя</label>
+          <input type="text" name="feedback-user-name" id="feedback-user-name" placeholder="Как вас зовут?" required>
+        </p>
+        <p>
+          <label class="visually-hidden" for="feedback-user-email">Электронная почта</label>
+          <input type="email" name="feedback-user-email" id="feedback-user-email" placeholder="Ваша почта для ответа?" required>
+        </p>
         <textarea name="feeback-message" cols="30" rows="10">Напишите что-нибудь...</textarea>
         <button class="btn" type="submit">Отправить</button>
       </form>
-      <button class="modal-close" type="button">Закрыть</button>
+      <button class="modal-close" type="button" aria-label="Закрыть">Закрыть</button>
     </section>
 
   </body>
