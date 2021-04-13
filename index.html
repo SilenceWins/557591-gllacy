@@ -2,12 +2,15 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>Глейси</title>
   </head>
-  <body>
+  <body style="background-color: #849d8f; background-image: url('img/Slider-1.png'); background-repeat: no-repeat; background-position: top center;">
     <header class="main-header">
       <a>
-        <img src="img/logo.img" alt="Логотип Глейси">
+        <img src="img/logo.svg" width="154" height="64" alt="Логотип Глейси">
       </a>
       <nav class="main-navigation" aria-label="Главная навигация">
         <ul class="site-navigation" aria-label="Страничная навигация">
@@ -26,26 +29,26 @@
         </ul>
         <ul class="user-navigation" aria-label="Пользовательская навигация">
           <li>
-            <a class="search-btn" href="#">Поиск</a>
-            <form class="user-search" method="POST" action="https://echo.htmlacademy.ru">
+            <a class="search-btn" href="#" aria-label="Поиск"></a>
+            <form class="user-search visually-hidden" method="POST" action="https://echo.htmlacademy.ru">
               <label class="visually-hidden" for="search">Поиск</label>
-              <input type="search" name="search" id="search" placeholder="Что ищем?" required>
+              <input type="search" name="search" id="search" placeholder="Что ищем?" tabindex="-1" required>
             </form>
           </li>
           <li>
-            <a class="login-btn" href="#" aria-label="Учетная запись">Вход</a>
-            <form class="user-login" method="POST" action="https://echo.htmlacademy.ru">
+            <a class="login-btn" href="#" aria-label="Вход в учетную запись">Вход</a>
+            <form class="user-login visually-hidden" method="POST" action="https://echo.htmlacademy.ru">
               <p>
                 <label class="visually-hidden" for="login-email">Электронная почта</label>
-                <input type="email" name="login-email" id="login-email" placeholder="Электронная почта" required>
+                <input type="email" name="login-email" id="login-email" placeholder="Электронная почта" tabindex="-1" required>
               </p>
               <p>
                 <label class="visually-hidden" for="login-pass">Пароль</label>
-                <input type="password" name="login-pass" id="login-pass" placeholder="Пароль" required>
+                <input type="password" name="login-pass" id="login-pass" placeholder="Пароль" tabindex="-1" required>
               </p>
-              <button type="submit">Войти</button>
-              <a href="#">Забыли пароль?</a>
-              <a href="#">Новая регистрация</a>
+              <button type="submit" tabindex="-1">Войти</button>
+              <a href="#" tabindex="-1">Забыли пароль?</a>
+              <a href="#" tabindex="-1">Новая регистрация</a>
             </form>
           </li>
           <li>
@@ -56,92 +59,91 @@
       <p class="header-time">С 10 до 20, ежедневно</p>
       <p class="header-phone">8 812 450-25-25</p>
     </header>
-
     <main class="container">
       <h1 class="visually-hidden">Главная страница магазина Глейси</h1>
       <!-- Делать ли слайдер с помощью радиокнопок или как-то по-другому? -->
       <section class="main-slider">
         <h2 class="visually-hidden">Слайдер мороженого</h2>
-        <label class="slider-control">
-          <input class="visually-hidden" type="radio" name="slider" checked>
-        </label>
-        <label class="slider-control">
-          <input class="visually-hidden" type="radio" name="slider">
-        </label>
-        <label class="slider-control">
-          <input class="visually-hidden" type="radio" name="slider">
-        </label>
-        <ul>
-          <li class="slider-picture">
-            <img src="img/slider-pic-1.jpg" alt="Крем-брюле и пломбир с малиновым джемом">
-            <p>Крем-брюле и пломбир с малиновым джемом</p>
+        <ul class="slider-controls">
+          <li><button class="slider-radio" type="button" aria-label="Первый слайд"></button></li>
+          <li><button class="slider-radio" type="button" aria-label="Второй слайд"></button></li>
+          <li><button class="slider-radio" type="button" aria-label="Третий слайд"></button></li>
+        </ul>
+        <ul class="slider-list">
+          <li class="slider-item">
+            <h3>Крем-брюле и пломбир с малиновым джемом</h3>
+            <a class="btn slider-btn" href="#">Давайте оба!</a>
           </li>
-          <li class="slider-picture">
-            <img src="img/slider-pic-2.jpg" alt="Шоколадный пломбир и лимонный сорбет">
-            <p>Шоколадный пломбир и лимонный сорбет</p>
+          <li class="slider-item visually-hidden">
+            <h3>Шоколадный пломбир и лимонный сорбет</h3>
+            <a class="btn slider-btn" href="#">Давайте оба!</a>
           </li>
-          <li class="slider-picture">
-            <img src="img/slider-pic-3.jpg" alt="Пломбир с помадкой и клубничный щербет">
-            <p>Пломбир с помадкой и клубничный щербет</p>
+          <li class="slider-item visually-hidden">
+            <h3>Пломбир с помадкой и клубничный щербет</h3>
+            <a class="btn slider-btn" href="#">Давайте оба!</a>
           </li>
         </ul>
-        <a class="btn" href="#">Давайте оба!</a>
       </section>
-
       <section class="discounts">
         <h2 class="visually-hidden">Акционные предложения</h2>
         <ul>
           <li class="discount-item discount-raspberry">
             <h3>Малинка даром!</h3>
             <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
-            <a class="btn" href="#">Хочу варенье!</a>
+            <a class="btn discount-btn" href="#">Хочу варенье!</a>
           </li>
           <li class="discount-item discount-chocolate">
             <h3>Шоколадки даром!</h3>
             <p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
-            <a class="btn" href="#">Хочу шоколадки!</a>
+            <a class="btn discount-btn" href="#">Хочу шоколадки!</a>
           </li>
         </ul>
       </section>
-
       <section class="products products-hits">
         <h2 class="visually-hidden">Хиты продаж</h2>
         <ul>
           <li class="product product-hit">
             <figure>
               <img src="img/hit-1.jpg" alt="Сливочное с апельсиновым джемом и цитрусовой стружкой">
-              <figcaption>Сливочное с апельсиновым джемом и цитрусовой стружкой</figcaption>
+              <figcaption>
+                <a class="link" href="#">Сливочное с апельсиновым джемом и цитрусовой стружкой</a>
+              </figcaption>
             </figure>
-            <span class="price">310 Р/кг</span>
+            <span class="price">310 &#8381;<span>/кг</span></span>
             <a class="btn" href="#">Быстрый просмотр</a>
           </li>
           <li class="product product-hit">
             <figure>
               <img src="img/hit-2.jpg" alt="Сливочно-кофейное с кусочками шоколада">
-              <figcaption>Сливочно-кофейное с кусочками шоколада</figcaption>
+              <figcaption>
+                <a class="link" href="#">Сливочно-кофейное с кусочками шоколада</a>
+              </figcaption>
             </figure>
-            <span class="price">380 Р/кг</span>
+            <span class="price">380 &#8381;<span>/кг</span></span>
             <a class="btn" href="#">Быстрый просмотр</a>
           </li>
           <li class="product product-hit">
             <figure>
               <img src="img/hit-3.jpg" alt="Сливочно-клубничное с присыпкой из белого шоколада">
-              <figcaption>Сливочно-клубничное с присыпкой из белого шоколада</figcaption>
+              <figcaption>
+                <a class="link" href="#">Сливочно-клубничное с присыпкой из белого шоколада</a>
+              </figcaption>
             </figure>
-            <span class="price">355 Р/кг</span>
+            <span class="price">355 &#8381;<span>/кг</span></span>
             <a class="btn" href="#">Быстрый просмотр</a>
           </li>
           <li class="product product-hit">
             <figure>
               <img src="img/hit-4.jpg" alt="Сливочное крем-брюле с карамельной подливкой">
-              <figcaption>Сливочное крем-брюле с карамельной подливкой</figcaption>
+              <figcaption>
+                <a class="link" href="#">Сливочное крем-брюле с карамельной подливкой</a>
+              </figcaption>
             </figure>
-            <span class="price">415 Р/кг</span>
+            <span class="price">415 &#8381;<span>/кг</span></span>
             <a class="btn" href="#">Быстрый просмотр</a>
           </li>
         </ul>
       </section>
-
       <section class="features">
         <h2 class="visually-hidden">Преимущества</h2>
         <b>Магазин Глэйси — это онлайн- и офлайн-магазин по продаже мороженого собственного производства на развес</b>
@@ -152,12 +154,10 @@
           <li class="feature-item">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</li>
         </ul>
       </section>
-
       <article class="blog-article">
         <h2>Новое в нашем блоге</h2>
         <a href="#">10 способов сервировки фруктовых щербетов к столу</a>
       </article>
-
       <section class="mailing">
         <h2 class="visually-hidden">Рассылка</h2>
         <p>Подпишитесь на нашу сладкую рассылку и будете всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
@@ -167,7 +167,6 @@
           <button class="btn" type="submit">Отправить</button>
         </form>
       </section>
-
       <section class="main-map">
         <h2 class="visually-hidden">Адрес</h2>
         <div class="map-js"></div>
@@ -181,7 +180,6 @@
         </div>
       </section>
     </main>
-
     <footer class="footer">
       <ul class="footer-social" aria-label="Ссылки на соцсети">
         <li><a href="#" aria-label="Твиттер">Твиттер</a></li>
@@ -202,7 +200,6 @@
         <span>Сделано в <a href="#">HTML Academy</a> © 2017</span>
       </div>
     </footer>
-
     <section class="modal modal-feedback">
       <h2 class="visually-hidden">Форма обратной связи</h2>
       <p>Мы обязательно вам ответим!</p>
