@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>Глейси: каталог</title>
   </head>
-  <body>
+  <body style="background-color: #849d8f; background-image: url('img/Slider-1.png'); background-repeat: no-repeat; background-position: top center;">
     <header class="main-header">
       <a href="index.html">
         <img src="img/logo.img" alt="Логотип Глейси">
@@ -15,8 +18,8 @@
         <ul class="site-navigation" aria-label="Страничная навигация">
           <li>
             <!--  Убирать ли href у ссылки на каталог? Проверь в стайлгайде состояние  -->
-            <a class="site-nav-active" href="#">Каталог</a>
-            <ul class="sub-menu" aria-label="Подменю">
+            <a class="site-current">Каталог</a>
+            <ul class="sub-menu hover-popup" aria-label="Подменю">
               <li class="sub-menu-header">Новинки</li>
               <li><a aria-current="page">Сливочное</a></li>
               <li><a href="#">Щербеты</a></li>
@@ -28,16 +31,16 @@
           <li><a href="#">О компании</a></li>
         </ul>
         <ul class="user-navigation" aria-label="Пользовательская навигация">
-          <li>
+          <li class="user-search">
             <a class="search-btn" href="#">Поиск</a>
-            <form class="user-search" method="POST" action="https://echo.htmlacademy.ru">
+            <form method="POST" action="https://echo.htmlacademy.ru">
               <label class="visually-hidden" for="search">Поиск</label>
               <input type="search" name="search" id="search" placeholder="Что ищем?" required>
             </form>
           </li>
-          <li>
-            <a class="login-btn" href="#" aria-label="Учетная запись">Вход</a>
-            <form class="user-login" method="POST" action="https://echo.htmlacademy.ru">
+          <li class="user-login">
+            <a class="login-btn" href="#" aria-label="Вход в учетную запись">Вход</a>
+            <form method="POST" action="https://echo.htmlacademy.ru">
               <p>
                 <label class="visually-hidden" for="login-email">Электронная почта</label>
                 <input type="email" name="login-email" id="login-email" placeholder="Электронная почта" required>
@@ -51,8 +54,8 @@
               <a href="#">Новая регистрация</a>
             </form>
           </li>
-          <li>
-            <a class="user-cart cart-active" href="#" aria-label="Корзина товаров">2 товара</a>
+          <li class="user-cart cart-active">
+            <a href="#" aria-label="Корзина товаров">2 товара</a>
             <form class="user-cart-details" method="POST" action="https://echo.htmlacademy.ru">
               <table class="user-cart-price" aria-label="Детали заказа">
                 <caption style="caption-side:bottom; text-align: right;">Итого: 750 руб.</caption>
@@ -72,8 +75,10 @@
           </li>
         </ul>
       </nav>
-      <p class="header-time">С 10 до 20, ежедневно</p>
-      <p class="header-phone">8 812 450-25-25</p>
+      <div class="header-wrapper">
+        <p class="header-time">С 10 до 20, ежедневно</p>
+        <p class="header-phone">8 812 450-25-25</p>
+      </div>
     </header>
 
     <main class="container">
