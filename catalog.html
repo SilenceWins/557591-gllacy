@@ -91,8 +91,8 @@
 
     <main class="container">
       <ol class="breadcrumbs" aria-label="Хлебные крошки">
-        <li><a href="index.html">Главная</a></li>
-        <li><a href="#">Каталог</a></li>
+        <li><a class="link" href="index.html">Главная</a></li>
+        <li><a class="link" href="#">Каталог</a></li>
         <li><a aria-current="page">Сливочное</a></li>
       </ol>
       <h1>Сливочное мороженое</h1>
@@ -109,7 +109,8 @@
             <option value="fat-content">по жирности</option>
           </select>
         </fieldset>
-        <fieldset class="price-range">
+        <div class="price-range">
+          <span class="price-range-title">Цена: 100 руб. — 500 руб.</span>
           <!--
           <div class="range-slider">
             <input type="number" value="0" name="min">
@@ -120,25 +121,52 @@
               <div class="range-slider-pin range-slider-pin-max"></div>
             </div>
           </div> -->
-          <legend>Цена:</legend>
-        </fieldset>
+          <div class="range-track"></div>
+        </div>
         <fieldset class="fat-content">
           <legend>Жирность:</legend>
           <ul>
-            <li><label><input type="radio" name="fat" value="0">0%</label></li>
-            <li><label><input type="radio" name="fat" value="10" checked>до 10%</label></li>
-            <li><label><input type="radio" name="fat" value="30">до 30%</label></li>
-            <li><label><input type="radio" name="fat" value="30+">выше 30%</label></li>
+            <li>
+              <input class="visually-hidden" id="fat-content-1" type="radio" name="fat" value="0">
+              <label for="fat-content-1" tabindex="1">0%</label>
+            </li>
+            <li>
+              <input class="visually-hidden" id="fat-content-2" type="radio" name="fat" value="10" checked>
+              <label for="fat-content-2" tabindex="1">до 10%</label>
+            </li>
+            <li>
+              <input class="visually-hidden" id="fat-content-3" type="radio" name="fat" value="30">
+              <label for="fat-content-3" tabindex="1">до 30%</label>
+            </li>
+            <li>
+              <input class="visually-hidden" id="fat-content-4" type="radio" name="fat" value="30+">
+              <label for="fat-content-4" tabindex="1">выше 30%</label>
+            </li>
           </ul>
         </fieldset>
         <fieldset class="fillers">
           <legend>Наполнители:</legend>
           <ul>
-            <li><label><input type="checkbox" name="filler" value="choco" checked>шоколадные</label></li>
-            <li><label><input type="checkbox" name="filler" value="sugar" checked>сахарные присыпки</label></li>
-            <li><label><input type="checkbox" name="filler" value="fruit">фрукты</label></li>
-            <li><label><input type="checkbox" name="filler" value="syrup">сиропы</label></li>
-            <li><label><input type="checkbox" name="filler" value="jam">джемы</label></li>
+            <li>
+              <input class="visually-hidden" id="filler-1" type="checkbox" name="filler" value="choco" checked aria-checked="true">
+              <label for="filler-1">шоколадные</label>
+            </li>
+            <li>
+              <input class="visually-hidden" id="filler-2" type="checkbox" name="filler" value="sugar" checked aria-checked="true">
+              <label for="filler-2">сахарные присыпки</label>
+            </li>
+            <li>
+              <input class="visually-hidden" id="filler-3" type="checkbox" name="filler" value="fruit">
+              <label for="filler-3">фрукты</label>
+            </li>
+            <li>
+              <input class="visually-hidden" id="filler-4" type="checkbox" name="filler" value="syrup">
+              <label for="filler-4">сиропы</label>
+            </li>
+            <li>
+              <input class="visually-hidden" id="filler-5" type="checkbox" name="filler" value="jam">
+              <label for="filler-5">джемы</label>
+            </li>
           </ul>
         </fieldset>
         <button type="submit">Применить</button>
@@ -270,15 +298,15 @@
         </ul>
       </section>
 
-      <ul class="paginator" aria-label="Страницы выбранных товаров">
-        <li class="page-prev page-inactive"><a>Предыдущая страница</a></li>
-        <li class="page-active"><a aria-current="page">1</a></li>
+      <ol class="paginator" aria-label="Страницы выбранных товаров">
+        <li><a class="page-prev" aria-label="Предыдущая страница"></a></li>
+        <li><a class="page-active" aria-current="page">1</a></li>
         <li><a href="#">2</a></li>
         <li><a href="#">3</a></li>
         <li><a href="#">4</a></li>
         <li><a href="#">5</a></li>
-        <li class="page-next"><a href="#">Следующая страница</a></li>
-      </ul>
+        <li><a class="page-next" href="#" aria-label="Следующая страница"></a></li>
+      </ol>
     </main>
 
     <footer class="footer">

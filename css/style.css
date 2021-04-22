@@ -243,6 +243,7 @@ button.btn {
 .user-search:hover .hover-popup,
 .search-btn:focus + .hover-popup {
   opacity: 1;
+  z-index: 2;
 }
 
 .user-search .input {
@@ -302,6 +303,7 @@ button.btn {
 .user-login:hover .hover-popup,
 .login-btn:focus + .hover-popup {
   opacity: 1;
+  z-index: 2;
 }
 
 .user-login .input {
@@ -363,6 +365,7 @@ button.btn {
 .user-cart.cart-active:hover .user-cart-details,
 .user-cart.cart-active > a:focus + .user-cart-details {
   opacity: 1;
+  z-index: 2;
 }
 
 .user-cart-details .cart-table {
@@ -425,13 +428,52 @@ button.btn {
 }
 
 .header-time {
+  margin: 0;
+  margin-bottom: 5px;
+
   font-size: 14px;
   line-height: 16px;
 }
 
 .header-phone {
+  margin: 0;
+
   font-size: 22px;
   line-height: 24px;
+}
+
+h1 {
+  margin-bottom: 46px;
+
+  font-size: 35px;
+  line-height: 41px;
+}
+
+.breadcrumbs {
+  display: flex;
+  padding: 0;
+  margin-top: -25px;
+
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 400;
+
+  list-style: none;
+}
+
+.breadcrumbs > * + * {
+  position:relative;
+  margin-left: 20px;
+}
+
+.breadcrumbs > * + *::before {
+  content: "»‎";
+  position: absolute;
+  left: -13px;
+}
+
+.breadcrumbs a {
+  line-height: inherit;
 }
 
 .main-slider .slider-controls,
@@ -467,12 +509,13 @@ button.btn {
   cursor: pointer;
 }
 
-.main-slider .slider-radio:hover,
-.main-slider .slider-radio:focus {
+.main-slider .slider-radio:not(.slider-current):hover,
+.main-slider .slider-radio:not(.slider-current):focus {
   background-color: rgba(248, 247, 244, 0.4);
 }
 
-.main-slider .slider-radio:active {
+.main-slider .slider-radio:active,
+.main-slider .slider-current {
   background-color: white;
 }
 
@@ -496,6 +539,279 @@ button.btn {
   text-align: center;
 
   border-radius: 32px;
+}
+
+.filter-control {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 15px;
+  row-gap: 38px;
+
+  line-height: 18px;
+  font-weight: 500;
+}
+
+.filter-control ul {
+  display: flex;
+
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+}
+
+.filter-control fieldset:not(.sorting),
+.filter-control button[type="submit"] {
+  position: relative;
+  margin: 0;
+  padding: 9px 18px;
+
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 18px;
+}
+
+.filter-control button[type="submit"] {
+  position: initial;
+
+  font: inherit;
+  color: white;
+
+  box-shadow: inset 0 0 0 2px white;
+}
+
+.filter-control button[type="submit"]:hover,
+.filter-control button[type="submit"]:focus {
+  color: #323232;
+
+  background-color: white;
+  box-shadow: none;
+}
+
+.filter-control button[type="submit"]:active {
+  background-color: #ededed;
+  box-shadow: inset 0 2px 1px #696969;
+}
+
+.filter-control legend {
+  position: absolute;
+  top: -23px;
+  padding: 0;
+
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.filter-control .sorting {
+  position: relative;
+  padding: 0;
+  margin: 0;
+
+  border: none;
+}
+
+.sorting legend {
+  left: 18px;
+}
+
+.filter-control .sorting select {
+  height: 36px;
+  padding: 9px 30px 9px 18px;
+  box-sizing: border-box;
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 18px;
+  color: white;
+
+  border: none;
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.2);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='5' viewBox='0 0 9 5'%3E%3Cpath fill='%23FFF' d='M4.5 5L0 0h9z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: top 50% right 15px;
+
+  appearance: none;
+}
+
+.sorting select:hover,
+.sorting select:focus {
+  color: #323232;
+
+  background-color: white;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='5' viewBox='0 0 9 5'%3E%3Cpath fill='%23000' d='M4.5 5L0 0h9z'/%3E%3C/svg%3E");
+}
+
+
+.sorting option {
+  font-size: 14px;
+  line-height: 16px;
+  color: #323232;
+  font-weight: 400;
+}
+
+.filter-control .price-range {
+  position: relative;
+  box-sizing: border-box;
+  width: 218px;
+  height: 36px;
+  padding: 0 20px;
+
+  border: 16px solid rgba(255, 255, 255, 0.2);
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-clip: padding-box;
+}
+
+.price-range .price-range-title {
+  position: absolute;
+  top: -38px;
+  left: 0;
+
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.price-range .range-track {
+  position: relative;
+  height: 4px;
+
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.range-track::before,
+.range-track::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: -8px;
+
+  background-image: url('../img/filter-button.svg');
+  background-repeat: no-repeat;
+
+  cursor: pointer;
+}
+
+.range-track::before {
+  left: -10px;
+}
+
+.range-track::after {
+  right: -10px;
+}
+
+.filter-control .fillers ul {
+  column-gap: 55px;
+}
+
+.fat-content ul {
+  column-gap: 50px;
+}
+
+.fat-content ul > li:first-child,
+.fillers ul > li:first-child  {
+  margin-left: 30px;
+}
+
+.fat-content label,
+.fillers label {
+  position: relative;
+
+  cursor: pointer;
+}
+
+/* Радиокнопки на CSS */
+
+/* .fat-content label::before {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: -1px;
+  width: 8px;
+  height: 8px;
+  padding: 4px;
+
+  border: 3px solid white;
+  border-radius: 50%;
+  background-clip: content-box;
+
+  opacity: 0.8;
+}
+
+.fat-content input:checked + label::before {
+  background-color: white;
+}
+
+.fat-content input:enabled + label:hover::before {
+  opacity: 1;
+}
+
+.fat-content input:disabled + label {
+  opacity: 0.4;
+}
+
+.fat-content input:focus-visible + label {
+  outline: -webkit-focus-ring-color auto 1px;
+} */
+
+/* Радиокнопки и чекбоксы на SVG */
+
+.fat-content label::before,
+.fillers label::before {
+  content: "";
+  position: absolute;
+  left: -33px;
+  top: -1px;
+
+  background-repeat: no-repeat;
+
+  opacity: 0.8;
+}
+
+.fat-content label::before {
+  width: 22px;
+  height: 22px;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25'%3E%3Cpath fill='%23FFF' d='M12.5 4c4.687 0 8.5 3.813 8.5 8.5 0 4.687-3.813 8.5-8.5 8.5C7.813 21 4 17.187 4 12.5 4 7.813 7.813 4 12.5 4m0-4C5.597 0 0 5.597 0 12.5S5.597 25 12.5 25 25 19.403 25 12.5 19.403 0 12.5 0z'/%3E%3C/svg%3E%0A");
+  background-size: 22px auto;
+}
+
+.fillers label::before {
+  width: 20px;
+  height: 20px;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='23' height='23' viewBox='0 0 23 23'%3E%3Cpath fill='%23FFFFFF' d='M20 2c.542 0 1 .458 1 1v17c0 .542-.458 1-1 1H3c-.542 0-1-.458-1-1V3c0-.542.458-1 1-1h17m0-2H3C1.35 0 0 1.35 0 3v17c0 1.65 1.35 3 3 3h17c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3z'/%3E%3C/svg%3E%0A");
+  background-size: contain;
+}
+
+.fat-content input:checked + label::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='25' height='25' viewBox='0 0 25 25'%3E%3Cpath fill='%23FFFFFF' d='M12.5 4c4.687 0 8.5 3.813 8.5 8.5 0 4.687-3.813 8.5-8.5 8.5C7.813 21 4 17.187 4 12.5 4 7.813 7.813 4 12.5 4m0-4C5.597 0 0 5.597 0 12.5S5.597 25 12.5 25 25 19.403 25 12.5 19.403 0 12.5 0z'/%3E%3Ccircle fill='%23FFFFFF' cx='12.5' cy='12.5' r='4.5'/%3E%3C/svg%3E%0A");
+}
+
+.fillers input:checked + label::before {
+  width: 24px;
+  height: 21px;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='27' height='23' viewBox='0 0 27 23'%3E%3Cpath fill='%23FFFFFF' d='M7.285 7.486l-2.829 2.829 7.783 7.783L26.171 4.166l-2.828-2.829-11.104 11.102z'/%3E%3Cpath fill='%23FFFFFF' d='M21 20c0 .542-.458 1-1 1H3c-.542 0-1-.458-1-1V3c0-.542.458-1 1-1h16.908L21.493.415A2.96 2.96 0 0 0 20 0H3C1.35 0 0 1.35 0 3v17c0 1.65 1.35 3 3 3h17c1.65 0 3-1.35 3-3v-9.829l-2 2V20z'/%3E%3C/svg%3E%0A");
+}
+
+.fat-content input:enabled + label:hover::before,
+.fat-content input:focus-visible:enabled + label::before,
+.fillers input:enabled + label:hover::before,
+.fillers input:focus-visible:enabled + label::before {
+  opacity: 1;
+}
+
+.fat-content input:disabled + label,
+.fillers input:disabled + label {
+  opacity: 0.4;
+}
+
+.fat-content input:focus-visible + label,
+.fillers input:focus-visible + label {
+  outline: -webkit-focus-ring-color auto 1px;
 }
 
 .discounts ul {
@@ -681,7 +997,7 @@ button.btn {
   color: #5a5a5a;
 
   background-color: white;
-  background-image: repeating-linear-gradient(135deg, #92cdff, #92cdff 5px, white 5px, white 10px, #fe9e90 10px, #fe9e90 15px, white 15px, white 20px);
+  background-image: repeating-linear-gradient(315deg, #92cdff, #92cdff 6px, white 6px, white 12px, #fe9e90 12px, #fe9e90 18px, white 18px, white 24px);
   border-radius: 15px;
 }
 
@@ -743,6 +1059,70 @@ button.btn {
 
 p.feedback-address {
   margin-bottom: 21px;
+}
+
+.paginator {
+  display: flex;
+  column-gap: 5px;
+  padding: 0;
+  padding-bottom: 30px;
+  margin: 0;
+
+  list-style: none;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.paginator a {
+  display: block;
+  width: 25px;
+  padding: 3.5px 0;
+
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+
+  border-radius: 50%;
+}
+
+.paginator a:not(.page-prev):not(.page-next):not(.page-active):hover,
+.paginator a:not(.page-prev):not(.page-next):not(.page-active):focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.paginator a:not(.page-prev):not(.page-next):not(.page-active):active,
+.page-active {
+  color: #323232;
+
+  background-color: white;
+}
+
+.paginator li:first-child {
+  margin-left: auto;
+}
+
+.page-prev,
+.page-next {
+  height: 18px;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='12' viewBox='0 0 8 12'%3E%3Cpath fill='%23C1C6CE' d='M7.237 5.642L1.729.133a.506.506 0 1 0-.716.716L6.163 6l-5.151 5.15a.507.507 0 0 0 .716.717l5.509-5.509a.504.504 0 0 0 0-.716z'/%3E%3C/svg%3E");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.page-prev {
+  transform: scaleX(-1);
+}
+
+.page-next {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='12' viewBox='0 0 8 12'%3E%3Cpath fill='%23FFF' d='M7.237 5.642L1.729.133a.506.506 0 1 0-.716.716L6.163 6l-5.151 5.15a.507.507 0 0 0 .716.717l5.509-5.509a.504.504 0 0 0 0-.716z'/%3E%3C/svg%3E");
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 18px;
+  padding-bottom: 18px;
 }
 
 /* Иконки */
@@ -828,6 +1208,9 @@ p.feedback-address {
 }
 
 .footer-references {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: calc(1200px * 0.022);
   padding: 0;
 
   list-style: none;
