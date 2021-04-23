@@ -479,12 +479,14 @@ h1 {
 .main-slider .slider-controls,
 .main-slider .slider-list {
   padding: 0;
+  /* margin: 0; */
 
   list-style: none;
 }
 
 .main-slider {
   position: relative;
+  margin-bottom: 40px;
 }
 
 .main-slider .slider-controls {
@@ -814,6 +816,10 @@ h1 {
   outline: -webkit-focus-ring-color auto 1px;
 }
 
+.discounts {
+  margin-bottom: 34px;
+}
+
 .discounts ul {
   display: grid;
   grid-template-columns: repeat(2, calc(1200px * 0.466));
@@ -824,7 +830,11 @@ h1 {
 }
 
 .discounts .discount-item {
+  display: flex;
+  flex-direction: column;
   height: 230px;
+  padding: 20px;
+  box-sizing: border-box;
 
   border-radius: 15px;
   background-repeat: no-repeat;
@@ -840,12 +850,19 @@ h1 {
 }
 
 .discount-item h3 {
+  margin: 0;
+
   font-size: 35px;
   line-height: 41px;
 }
 
 .discount-item p {
   font-size: 18px;
+}
+
+.discount-item .btn {
+  margin-top: auto;
+  align-self: flex-end;
 }
 
 .products ul {
@@ -934,6 +951,9 @@ h1 {
 }
 
 .features {
+  padding: 20px;
+  margin-bottom: 40px;
+
   color: #323232;
 
   background-color: #ede0c3;
@@ -949,23 +969,59 @@ h1 {
 }
 
 .feature-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: calc(1200px * 0.022);
+  row-gap: calc(1200px * 0.011);
   padding: 0;
 
   list-style: none;
 }
 
 .feature-list .feature-item {
+  position: relative;
+  padding-top: 16px;
+  padding-left: 56px;
+
   font-weight: 400;
+}
+
+.feature-item::before {
+  position: absolute;
+  content: "";
+  width: 49px;
+  height: 49px;
+  top: 0;
+  left: 0;
+
+  background-repeat: no-repeat;
+}
+
+.feature-item:first-child::before {
+  background-image: url("../img/ice-cream.svg");
+}
+
+.feature-item:nth-child(2)::before {
+  background-image: url("../img/cow.svg");
+}
+
+.feature-item:nth-child(3)::before {
+  background-image: url("../img/eco.svg");
+}
+
+.feature-item:last-child::before {
+  background-image: url("../img/thermometer.svg");
 }
 
 .two-columns {
   display: grid;
   grid-template-columns: repeat(2, calc(1200px * 0.466));
   column-gap: calc(1200px * 0.022);
+  margin-bottom: 40px;
 }
 
 .blog-article {
-  padding-left: 20px;
+  padding: 25px 20px 20px;
 
   color: #323232;
 
@@ -976,6 +1032,9 @@ h1 {
 }
 
 .blog-article h2 {
+  margin: 0;
+  margin-bottom: 4px;
+
   font-size: 16px;
   line-height: 22px;
   font-weight: 500;
@@ -1019,7 +1078,9 @@ h1 {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-  height: 430px;
+  min-height: 409px;
+
+  cursor: url("../img/pin.svg"), auto;
 }
 
 .main-map img {
