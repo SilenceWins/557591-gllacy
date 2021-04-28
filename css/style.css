@@ -12,7 +12,8 @@ body {
 a {
   line-height: 18px;
   color: white;
-  text-decoration-color: rgba(255, 255, 255, 0.3);
+  -webkit-text-decoration-color: rgba(255, 255, 255, 0.3);
+          text-decoration-color: rgba(255, 255, 255, 0.3);
   text-underline-offset: 2px;
 }
 
@@ -20,14 +21,17 @@ a.link:hover,
 a.link:focus,
 a.link:active {
   color: #ffbc9e;
-  text-decoration-color: rgba(255, 188, 158, 0.3);
+  -webkit-text-decoration-color: rgba(255, 188, 158, 0.3);
+          text-decoration-color: rgba(255, 188, 158, 0.3);
 }
 
 a.link-alt {
   color: #323232;
   font-weight: 500;
 
-  text-decoration-color: rgba(50, 50, 50, 0.3);
+  -webkit-text-decoration-color: rgba(50, 50, 50, 0.3);
+
+          text-decoration-color: rgba(50, 50, 50, 0.3);
 }
 
 a.link-alt:hover,
@@ -35,7 +39,9 @@ a.link-alt:focus,
 a.link-alt:active {
   color: #e84d37;
 
-  text-decoration-color: rgba(232, 77, 55, 0.3);
+  -webkit-text-decoration-color: rgba(232, 77, 55, 0.3);
+
+          text-decoration-color: rgba(232, 77, 55, 0.3);
 }
 /*
 img {
@@ -98,8 +104,10 @@ button.btn {
 
 .main-header {
   display: grid;
+  grid-template-columns: -webkit-min-content 1fr;
   grid-template-columns: min-content 1fr;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 
 .main-navigation {
@@ -290,6 +298,7 @@ button.btn {
 
 .user-login .hover-popup {
   display: grid;
+  grid-template-columns: -webkit-min-content -webkit-min-content;
   grid-template-columns: min-content min-content;
   gap: 20px;
   position: absolute;
@@ -571,7 +580,8 @@ button.btn {
 .filter-control {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 15px;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
   row-gap: 38px;
 
   line-height: 18px;
@@ -662,7 +672,11 @@ button.btn {
   background-repeat: no-repeat;
   background-position: top 50% right 15px;
 
-  appearance: none;
+  -webkit-appearance: none;
+
+     -moz-appearance: none;
+
+          appearance: none;
 }
 
 .sorting select:hover,
@@ -733,11 +747,13 @@ button.btn {
 }
 
 .filter-control .fillers ul {
-  column-gap: 55px;
+  -moz-column-gap: 55px;
+       column-gap: 55px;
 }
 
 .fat-content ul {
-  column-gap: 50px;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
 }
 
 .fat-content ul > li:first-child,
@@ -851,7 +867,8 @@ button.btn {
 .discounts ul {
   display: grid;
   grid-template-columns: repeat(2, calc(1200px * 0.466));
-  column-gap: calc(1200px * 0.022);
+  -moz-column-gap: calc(1200px * 0.022);
+       column-gap: calc(1200px * 0.022);
   padding: 0;
 
   list-style: none;
@@ -1009,7 +1026,8 @@ button.btn {
 .feature-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: calc(1200px * 0.022);
+  -moz-column-gap: calc(1200px * 0.022);
+       column-gap: calc(1200px * 0.022);
   row-gap: 7px;
   padding: 0;
   margin: 0;
@@ -1055,7 +1073,8 @@ button.btn {
 .two-columns {
   display: grid;
   grid-template-columns: repeat(2, calc(1200px * 0.466));
-  column-gap: calc(1200px * 0.022);
+  -moz-column-gap: calc(1200px * 0.022);
+       column-gap: calc(1200px * 0.022);
   margin-bottom: 40px;
 }
 
@@ -1190,7 +1209,8 @@ p.feedback-phone {
 .paginator {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 5px;
+  -moz-column-gap: 5px;
+       column-gap: 5px;
   padding: 0;
   padding-bottom: 30px;
   margin: 0;
@@ -1338,7 +1358,8 @@ p.feedback-phone {
 .footer-references {
   display: grid;
   grid-template-columns: auto auto;
-  column-gap: calc(1200px * 0.022);
+  -moz-column-gap: calc(1200px * 0.022);
+       column-gap: calc(1200px * 0.022);
   padding: 0;
 
   list-style: none;
@@ -1432,6 +1453,38 @@ p.feedback-phone {
 }
 
 /* Стиль инпутов */
+
+.input::-webkit-input-placeholder {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #999999;
+}
+
+.input::-moz-placeholder {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #999999;
+}
+
+.input:-ms-input-placeholder {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #999999;
+}
+
+.input::-ms-input-placeholder {
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #999999;
+}
 
 .input,
 .input::placeholder {
