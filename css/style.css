@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 9px calc((100vw - 1200px - 16px)/2 + 0.023 * 1200px) 0;
+  padding: 9px calc((100vw - 1200px - 17px)/2 + 0.023 * 1200px) 0;
 
   font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
@@ -37,6 +37,11 @@ a.link-alt:active {
 
   text-decoration-color: rgba(232, 77, 55, 0.3);
 }
+/*
+img {
+  max-width: 100%;
+  height: auto;
+} */
 
 .visually-hidden {
   position: absolute;
@@ -56,8 +61,10 @@ a.link-alt:active {
   font-size: 18px;
   line-height: 24px;
   font-weight: bold;
+  text-align: center;
   text-decoration: none;
   color: white;
+  vertical-align: top;
 
   background-image: linear-gradient(0deg, #e74a35, #f26843);
   border-radius: 22px;
@@ -68,6 +75,8 @@ button.btn {
   font-family: inherit;
 
   border: none;
+
+  cursor: pointer;
 }
 
 .btn:hover,
@@ -90,22 +99,27 @@ button.btn {
 .main-header {
   display: grid;
   grid-template-columns: min-content 1fr;
+  column-gap: 10px;
 }
 
 .main-navigation {
   display: flex;
+  flex-wrap: wrap;
+  margin-top: 14px;
 }
 
 .site-navigation,
 .user-navigation,
 .sub-menu {
   padding: 0;
+  margin: 0;
 
   list-style: none;
 }
 
 .site-navigation {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .site-navigation > li:first-child {
@@ -113,8 +127,8 @@ button.btn {
 }
 
 .site-navigation > li > a {
-  display: inline-block;
-  padding: 7px 13px;
+  display: block;
+  padding: 7px 14px;
 
   line-height: 18px;
 
@@ -205,6 +219,7 @@ button.btn {
 
 .user-navigation {
   display: flex;
+  flex-wrap: wrap;
   margin-left: auto;
 }
 
@@ -213,9 +228,8 @@ button.btn {
 }
 
 .user-navigation > li > a {
-  display: inline-block;
+  display: block;
   box-sizing: border-box;
-  height: 32px;
   padding-top: 8px;
   padding-bottom: 8px;
 
@@ -234,6 +248,7 @@ button.btn {
 
 .user-search .hover-popup {
   position: absolute;
+  top: 38px;
   right: 0;
   padding: 20px 15px;
 
@@ -253,11 +268,12 @@ button.btn {
 
 .user-navigation .search-btn {
   width: 32px;
+  height: 32px;
 
   background-image: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="17" height="17" viewBox="0 0 17 17"><path fill="%23fff" d="M16.958 15.527L11.75 10.32A6.455 6.455 0 0 0 13 6.5 6.5 6.5 0 1 0 6.5 13a6.465 6.465 0 0 0 3.839-1.263l5.205 5.204 1.414-1.414zM6.5 11C4.019 11 2 8.981 2 6.5S4.019 2 6.5 2 11 4.019 11 6.5 8.981 11 6.5 11z"/></svg>');
   background-repeat: no-repeat;
   background-size: 17px 17px;
-  background-position: 50% 50%;
+  background-position: 45% 45%;
 }
 
 .user-navigation .search-btn:hover,
@@ -312,12 +328,11 @@ button.btn {
 }
 
 .user-navigation .login-btn {
-  width: 92px;
-  padding-left: 45px;
-  padding-right: 15px;
+  padding-left: 43px;
+  padding-right: 17px;
 
   background-image: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="19" viewBox="0 0 21 19"><g fill="%23fff"><path d="M6 14.875L12.917 9.5 6 4.125v2.917H-.042v4.917H6z"/><path d="M18 0H5C3.9 0 3 .9 3 2v2h2V2h13v15H5v-2H3v2c0 1.1.9 2 2 2h13c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2z"/></g></svg>');
-  background-position: 18px 6px;
+  background-position: 16px 6px;
   background-repeat: no-repeat;
 }
 
@@ -334,13 +349,12 @@ button.btn {
 }
 
 .user-cart > a {
-  width: 117px;
-  padding-left: 45px;
-  padding-right: 15px;
+  padding-left: 44px;
+  padding-right: 33px;
 
   background-image: url("../img/basket.svg");
   background-repeat: no-repeat;
-  background-position: 18px 6px;
+  background-position: 16px 6px;
   background-size: 21px 20px;
 }
 
@@ -410,6 +424,8 @@ button.btn {
   background-size: 11px 11px;
   background-repeat: no-repeat;
   background-position: 50% 50%;
+
+  cursor: pointer;
 }
 
 .cart-table .cart-product-image {
@@ -423,6 +439,7 @@ button.btn {
 .header-wrapper {
   grid-row: 2/3;
   grid-column: -1/-2;
+  margin-top: -5px;
 
   text-align: right;
 }
@@ -442,7 +459,8 @@ button.btn {
   line-height: 24px;
 }
 
-h1 {
+.breadcrumbs + h1 {
+  margin: 0;
   margin-bottom: 46px;
 
   font-size: 35px;
@@ -451,8 +469,9 @@ h1 {
 
 .breadcrumbs {
   display: flex;
+  flex-wrap: wrap;
   padding: 0;
-  margin-top: -25px;
+  margin: -17px 0 10px;
 
   font-size: 14px;
   line-height: 16px;
@@ -479,30 +498,35 @@ h1 {
 .main-slider .slider-controls,
 .main-slider .slider-list {
   padding: 0;
-  /* margin: 0; */
+  margin: 0;
 
   list-style: none;
 }
 
 .main-slider {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 41px;
 }
 
 .main-slider .slider-controls {
   position: absolute;
-  bottom: 0;
+  bottom: 22px;
   left: 0;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .slider-controls > * + * {
-  margin-left: 4px;
+  margin-left: 9px;
 }
 
 .main-slider .slider-radio {
-  width: 19px;
-  height: 19px;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  box-sizing: border-box;
 
   border: 2px solid white;
   border-radius: 50%;
@@ -527,7 +551,7 @@ h1 {
 
 .slider-list h3 {
   width: 695px;
-  margin: 258px auto 34px;
+  margin: 275px auto 30px;
 
   font-size: 60px;
   line-height: 60px;
@@ -539,6 +563,7 @@ h1 {
   font-size: 32px;
   line-height: 44px;
   text-align: center;
+  text-shadow: 0 2px 5px rgba(160, 32, 11, 0.76);
 
   border-radius: 32px;
 }
@@ -555,6 +580,7 @@ h1 {
 
 .filter-control ul {
   display: flex;
+  flex-wrap: wrap;
 
   padding: 0;
   margin: 0;
@@ -580,6 +606,8 @@ h1 {
   color: white;
 
   box-shadow: inset 0 0 0 2px white;
+
+  cursor: pointer;
 }
 
 .filter-control button[type="submit"]:hover,
@@ -832,8 +860,7 @@ h1 {
 .discounts .discount-item {
   display: flex;
   flex-direction: column;
-  height: 230px;
-  padding: 20px;
+  padding: 17px 20px 25px;
   box-sizing: border-box;
 
   border-radius: 15px;
@@ -851,18 +878,23 @@ h1 {
 
 .discount-item h3 {
   margin: 0;
+  margin-bottom: 14px;
 
   font-size: 35px;
   line-height: 41px;
 }
 
 .discount-item p {
+  margin: 0;
+  margin-bottom: 43px;
+
   font-size: 18px;
 }
 
 .discount-item .btn {
-  margin-top: auto;
   align-self: flex-end;
+  padding-top: 11px;
+  padding-bottom: 11px;
 }
 
 .products ul {
@@ -911,9 +943,12 @@ h1 {
 
 .product figure {
   margin: 0;
+  margin-bottom: 10px;
 }
 
 .product img {
+  margin-bottom: 8px;
+
   border-radius: 50%;
 }
 
@@ -923,8 +958,8 @@ h1 {
 
 .product .price {
   position: absolute;
-  top: 215px;
-  left: 15px;
+  top: 216px;
+  left: 14px;
 
   font-size: 45px;
   line-height: 45px;
@@ -951,7 +986,7 @@ h1 {
 }
 
 .features {
-  padding: 20px;
+  padding: 25px 20px;
   margin-bottom: 40px;
 
   color: #323232;
@@ -963,6 +998,9 @@ h1 {
 }
 
 .features b {
+  display: block;
+  margin-bottom: 5px;
+
   font-size: 24px;
   line-height: 30px;
   font-weight: 500;
@@ -972,8 +1010,9 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: calc(1200px * 0.022);
-  row-gap: calc(1200px * 0.011);
+  row-gap: 7px;
   padding: 0;
+  margin: 0;
 
   list-style: none;
 }
@@ -991,7 +1030,7 @@ h1 {
   content: "";
   width: 49px;
   height: 49px;
-  top: 0;
+  top: 3px;
   left: 0;
 
   background-repeat: no-repeat;
@@ -1021,7 +1060,7 @@ h1 {
 }
 
 .blog-article {
-  padding: 25px 20px 20px;
+  padding: 23px 20px 20px;
 
   color: #323232;
 
@@ -1062,40 +1101,53 @@ h1 {
 
 .mailing-inner-wrapper {
   height: 210px;
-  padding: 35px 20px;
+  padding: 30px 20px;
   box-sizing: border-box;
 
   background-color: #f8f7f4;
   border-radius: 15px;
 }
 
+.mailing .btn {
+  padding: 10px 19px;
+}
+
 .mailing p {
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 35px;
+}
+
+.mailing .input {
+  margin-right: 7px;
 }
 
 .main-map {
+  position: relative;
   display: flex;
-  flex-direction: row-reverse;
   align-items: center;
   min-height: 409px;
 
-  cursor: url("../img/pin.svg"), auto;
+  background-image: url("../img/pin.svg");
+  background-size: 80px 140px;
+  background-repeat: no-repeat;
+  background-position: left 250px center;
 }
 
 .main-map img {
   position: absolute;
-  width: calc(0.952 * 1200px);
+  width: calc(0.954 * 1200px);
   height: auto;
 
   z-index: -1;
 }
 
 .main-map .feedback {
+  display: flex;
+  flex-direction: column;
   width: 302px;
-  height: 305px;
   margin-right: calc(0.023 * 1200px);
-  padding: 32px 25px;
+  margin-left: auto;
+  padding: 29px 25px 32px;
   box-sizing: border-box;
 
   font-size: 14px;
@@ -1105,6 +1157,10 @@ h1 {
 
   background-color: white;
   border-radius: 15px;
+}
+
+.feedback p:first-child {
+  width: 155px;
 }
 
 .feedback p {
@@ -1119,11 +1175,21 @@ h1 {
 }
 
 p.feedback-address {
-  margin-bottom: 21px;
+  margin-bottom: 19px;
+}
+
+p.feedback-phone {
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+
+.main-map .feedback .btn {
+  margin-top: 23px;
 }
 
 .paginator {
   display: flex;
+  flex-wrap: wrap;
   column-gap: 5px;
   padding: 0;
   padding-bottom: 30px;
@@ -1137,7 +1203,7 @@ p.feedback-address {
 .paginator a {
   display: block;
   width: 25px;
-  padding: 3.5px 0;
+  padding: 4px 0 3px;
 
   font-weight: 500;
   text-align: center;
@@ -1190,6 +1256,7 @@ p.feedback-address {
 
 .footer-social {
   display: flex;
+  flex-wrap: wrap;
   padding: 0;
 
   list-style: none;
@@ -1316,9 +1383,9 @@ p.feedback-address {
 }
 
 .modal-feedback {
-  /* position: fixed;
+  position: fixed;
   top: 50vh;
-  left: 50vw; */
+  left: 50vw;
   padding: 20px 25px;
   width: 428px;
 
@@ -1327,13 +1394,41 @@ p.feedback-address {
   background-color: #f8f7f4;
   border-radius: 10px;
 
-  /* transform: translateX(-50%) translateY(-50%); */
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 2;
 }
 
-.modal-feedback b {
+.modal-feedback > p {
+  margin: 0;
+  margin-bottom: 20px;
+
   font-size: 24px;
   line-height: 28px;
   font-weight: 500;
+}
+
+.modal-feedback form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-feedback form .btn {
+  margin-left: auto;
+}
+
+.modal-feedback form p {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.modal-feedback:not(.visually-hidden) + .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* Стиль инпутов */
@@ -1379,6 +1474,7 @@ p.feedback-address {
   display: block;
   min-height: 155px;
   width: 100%;
+  margin-bottom: 25px;
 
   resize: none;
 }
@@ -1390,7 +1486,7 @@ p.feedback-address {
 }
 
 .modal-feedback .modal-close {
-  /* position: absolute; */
+  position: absolute;
   top: 15px;
   right: 16px;
   width: 18px;
