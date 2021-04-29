@@ -9,6 +9,9 @@ body {
   color: white;
 
   background-color: #849d8f;
+}
+
+.main-body {
   background-image: url('../img/Slider-0.png');
   background-repeat: no-repeat;
   background-position: top center;
@@ -1147,9 +1150,7 @@ button.btn {
 
 .main-map {
   position: relative;
-  display: flex;
-  align-items: center;
-  min-height: 409px;
+  min-height: 410px;
 
   background-image: url("../img/pin.svg");
   background-size: 80px 140px;
@@ -1165,15 +1166,22 @@ button.btn {
   z-index: -1;
 }
 
+.main-map iframe {
+  position: absolute;
+  width: calc(0.954 * 1200px);
+  height: 100%;
+}
+
 .main-map .feedback {
+  position: absolute;
+  top: 50%;
+  right: calc(0.023 * 1200px + 40px);
+
   display: flex;
   flex-direction: column;
   width: 302px;
-  margin-right: calc(0.023 * 1200px);
-  margin-left: auto;
   padding: 29px 25px 32px;
   box-sizing: border-box;
-
   font-size: 14px;
   line-height: 20px;
   font-weight: 400;
@@ -1181,6 +1189,9 @@ button.btn {
 
   background-color: white;
   border-radius: 15px;
+
+  transform: translateY(-50%);
+  z-index: 2;
 }
 
 .feedback p:first-child {
@@ -1421,7 +1432,7 @@ p.feedback-phone {
   border-radius: 10px;
 
   transform: translateX(-50%) translateY(-50%);
-  z-index: 2;
+  z-index: 4;
 }
 
 .modal-feedback > p {
@@ -1455,6 +1466,8 @@ p.feedback-phone {
   width: 100%;
 
   background-color: rgba(0, 0, 0, 0.3);
+
+  z-index: 3;
 }
 
 /* Стиль инпутов */
