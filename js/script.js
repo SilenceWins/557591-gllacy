@@ -3,6 +3,7 @@ var sliderRadios = document.querySelectorAll(".slider-radio");
 var sliderItems = document.querySelectorAll(".slider-item");
 var feedbackButton = document.querySelector(".main-map .feedback .btn");
 var modalFeedback = document.querySelector(".modal-feedback");
+var modalClose = modalFeedback.querySelector(".modal-close");
 var backgrounds = ["#849D8F", "#8996A6", "#9D8B84"];
 
 
@@ -31,7 +32,12 @@ sliderRadios.forEach((sliderRadio, i) => {
 
 feedbackButton.addEventListener("click", (e) => {
   e.preventDefault();
-  modalFeedback.classList.remove(".visually-hidden");
+  modalFeedback.classList.remove("visually-hidden");
+});
+
+modalClose.addEventListener("click", (e) => {
+  e.preventDefault();
+  modalFeedback.classList.add("visually-hidden");
 });
 
 

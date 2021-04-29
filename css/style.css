@@ -1555,4 +1555,6 @@ p.feedback-phone {
   background-image: url("../img/cross-big.svg");
   background-repeat: no-repeat;
   background-position: center center;
+
+  cursor: pointer;
 }
