@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 9px calc((100vw - 1200px - 17px)/2 + 0.023 * 1200px) 0;
+  min-width: calc(1200px * 0.954);
 
   font-family: "Roboto", Arial, sans-serif;
   font-size: 16px;
@@ -11,10 +12,10 @@ body {
   background-color: #849d8f;
 }
 
-.main-body {
+body.main-body {
   background-image: url('../img/Slider-0.png');
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: top;
 }
 
 a {
