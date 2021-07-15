@@ -173,7 +173,14 @@ button.btn {
   background-color: #d07058;
 }
 
+.site-navigation > li:hover > .hover-popup,
+.site-navigation > li:focus-within > .hover-popup,
+.site-navigation > li > .hover-popup:hover {
+  display: block;
+}
+
 .hover-popup {
+  display: none;
   color: #323232;
 
   background-color: #f8f7f4;
